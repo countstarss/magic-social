@@ -1,18 +1,59 @@
-import React from 'react'
+'use client'
+import React,{ useEffect,useState } from 'react'
 import { contentTemplates } from '@/lib/contentTemplate'
+import { categories } from './Search'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-type Props = {}
+type Props = {
+  searchInput:string,
+  selectedCategory:string
+}
 
-const Template = (props: Props) => {
+const Template = ({ searchInput,selectedCategory }: Props) => {
+  // TODO: 这里过滤最后呈现的数据
+  const [templateList,setTemplateList] = useState(contentTemplates);
+  const [templateCategory,setTemplateCategory] = useState(categories);
+
+  /*
+  TODO: 搜索框
+  MARK: 搜索框
+  */
+  useEffect(() => {
+    if(searchInput && searchInput.length > 2) {
+      
+      const filteredTemplates = contentTemplates.filter((item) => 
+        item.name.toLowerCase().includes(searchInput.toLowerCase())
+      );
+      setTemplateList(filteredTemplates);
+    } else {
+      setTemplateList(contentTemplates);
+    }
+  },[searchInput])
+
+  /*
+  TODO: 标签搜索
+  MARK: 标签搜索
+  */
+  useEffect(() => {
+    if(selectedCategory) {
+      
+      const filteredTemplates = contentTemplates.filter((item) => 
+        item.category.toLowerCase().replace(/[, ]+/,"").includes(selectedCategory.toLowerCase())
+      );
+      setTemplateList(filteredTemplates);
+    } else {
+      setTemplateList(contentTemplates);
+    }
+  },[selectedCategory])
+
   return (
     <div className={
-      cn('grid md:grid-cols-4 mx-7 p-2 px-6 my-6 py-6 bg-slate-200 rounded-xl h-[80vh] gap-16 overflow-scroll',{
-        "md:grid-rows-3" :contentTemplates.length < 9
+      cn('grid md:grid-cols-4 mx-7 p-2 px-6 my-6 py-6 bg-slate-200 rounded-2xl h-[80vh] gap-16 overflow-scroll shadow-inner-full',{
+        "md:grid-rows-3" :contentTemplates.length < 9,
       })
     }>
-      {contentTemplates.map((template) => (
+      {templateList.map((template) => (
         <div key={template.slug}>
           <Link
             href={`/dashboard/${template.slug}`}

@@ -10,7 +10,7 @@ export const contentTemplates = [
   {
     name: "Youtube Video Description",
     desc: "An AI tool that generate youtube video description from your information",
-    category: "Youtube",
+    category: "All,Media",
     icon: FaYoutube,
     aiPrompt:
       "Give me youtube video description Ideas based on given video description outline and title and give me result in Rich Text Editor format",
@@ -32,7 +32,7 @@ export const contentTemplates = [
   {
     name: "Youtube Video Idea",
     desc: "An AI tool that generate Youtube Video Idea based on given information",
-    category: "Youtube",
+    category: "All,Meida",
     icon: FaYoutube,
     aiPrompt:
       "Give me youtube video idea on given video niche & outline topic and give me result in Rich Text Editor format",
@@ -54,7 +54,7 @@ export const contentTemplates = [
   {
     name: "Instagram Hashtags",
     desc: "An AI tool that generate Instagram hashtags based on your post niche and outline information",
-    category: "Instagram",
+    category: "All,Media",
     icon: FaInstagram,
     aiPrompt:
       "Give me some good examples of instagram hashtags on given niche & outline topic and give me result in Rich Text Editor format",
@@ -76,7 +76,7 @@ export const contentTemplates = [
   {
     name: "Tiktok Hashtags",
     desc: "An AI tool that generate Tiktok topic idea based on your post niche and outline information",
-    category: "Tiktok",
+    category: "All,Meida",
     icon: FaTiktok,
     aiPrompt:
       "Give me some good examples of instagram hashtags on given niche & outline topic and give me result in Rich Text Editor format",
@@ -98,7 +98,7 @@ export const contentTemplates = [
   {
     name: "Linkedin Post",
     desc: "An AI tool that generate Linkedin Post idea based on your post niche and outline information",
-    category: "Linkedin",
+    category: "All,Work",
     icon: FaLinkedin,
     aiPrompt:
       "Give me some good examples of Linkedin Post idea on given niche & outline topic and give me result in Rich Text Editor format",
@@ -120,7 +120,7 @@ export const contentTemplates = [
   {
     name: "Tweet",
     desc: "An AI tool that generate Linkedin Post idea based on your post niche and outline information",
-    category: "Tweet",
+    category: "All,Work,Media",
     icon: FaTwitter,
     aiPrompt:
       "Give me 280 characters of tweet example on given niche & outline topic",

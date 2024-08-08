@@ -23,7 +23,7 @@ const layout = ({ children }: Props) => {
       >
         <SideBar />
       </div>
-      <div className='lg:ml-56 bg-gray-50 h-full'>
+      <div className='lg:ml-56 bg-white h-full'>
         {children}
       </div>
     </div>

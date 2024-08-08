@@ -1,4 +1,5 @@
 'use client'
+
 import Logo from '@/components/Logo';
 import React, { useEffect, useState } from 'react'
 import { WandSparkles,CreditCard,Book } from "lucide-react"
@@ -32,7 +33,7 @@ const SideBar = (props: Props) => {
   }
 
   return (
-    <div className='p-3 bg-slate-200 h-[96vh] flex flex-col rounded-2xl my-4 ml-4'>
+    <div className='p-3 bg-slate-200 h-[94vh] flex flex-col rounded-3xl my-7 ml-4 shadow-inner hover:translate-x-[1px] hover:-translate-y-[1px] duration-300'>
       {/* //MARK: Logo
        */}
       <div className='flex flex-col items-center'>
@@ -46,7 +47,7 @@ const SideBar = (props: Props) => {
           <Link href={menuItem.path} key={menuItem.name} onClick={() => handleOnClick(menuItem.name)}>
             <div className={
               // FIXME: 这里有一个更优雅的解决方案，那就是使用usePath，用path来赋予样式，而不是使用 name
-              cn('flex p-1.5 my-4 flex-row gap-2 mb-1 bg-white hover:bg-slate-900 rounded-xl hover:text-white transition-colors  duration-300 ease-in-out',{
+              cn('flex p-2 py-3 my-4 flex-row gap-2 mb-1 bg-white hover:bg-slate-900 rounded-lg hover:text-white transition-colors  duration-300 ease-in-out',{
                   "bg-slate-900 text-white shadow-md" : menuItem.name === selectedTab,
                   "bg-white text-black": menuItem.name !== selectedTab
               })
