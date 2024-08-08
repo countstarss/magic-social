@@ -1,9 +1,7 @@
-'use client'
 import { UserButton } from '@clerk/nextjs';
 import { SearchIcon } from 'lucide-react';
 import React from 'react'
 import Category from './Category';
-
 
 export const categories = [
   {
@@ -47,7 +45,6 @@ const Search = ({ onSearchInput, onSelecteCategory } : Props) => {
         </div>
 
         <div className='flex gap-2 items-center p-2 scale-150'>
-          
           <UserButton />
         </div>
 

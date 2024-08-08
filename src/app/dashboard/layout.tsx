@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import SideBar from './_components/SideBar'
 import Search from './_components/Search'
@@ -22,6 +23,7 @@ const layout = ({ children }: Props) => {
         }}
       >
         <SideBar />
+
       </div>
       <div className='lg:ml-56 bg-white h-full'>
         {children}

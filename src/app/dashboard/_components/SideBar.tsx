@@ -1,7 +1,7 @@
 'use client'
 
 import Logo from '@/components/Logo';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { WandSparkles,CreditCard,Book } from "lucide-react"
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -33,7 +33,7 @@ const SideBar = (props: Props) => {
   }
 
   return (
-    <div className='p-3 bg-slate-200 h-[94vh] flex flex-col rounded-3xl my-7 ml-4 shadow-inner hover:translate-x-[1px] hover:-translate-y-[1px] duration-300'>
+    <div className='z-50 p-3 bg-slate-200 h-[94vh] flex flex-col rounded-3xl my-7 ml-4 shadow-inner hover:translate-x-[1px] hover:-translate-y-[1px] duration-300'>
       {/* //MARK: Logo
        */}
       <div className='flex flex-col items-center'>

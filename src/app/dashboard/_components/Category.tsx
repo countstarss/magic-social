@@ -1,5 +1,6 @@
+'use client'
 import { cn } from '@/lib/utils';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export interface CategoryProps {
   categoryName:string;
@@ -20,8 +21,9 @@ const Category = ({ items,onSelecteCategory }: Props) => {
   return (
     <div className='flex gap-2'>
       {
-        items.map((item) => (
+        items.map((item,index) => (
           <div
+            key={`${item.categoryName}-${index}`}
             className={
               cn('flex gap-2 items-center p-2 px-3 border rounded-2xl w-2/3 lg:w-1/3 bg-white cursor-pointer transition-colors duration-500',{
                 "bg-slate-900 text-white": item.categoryName === selectedCategory

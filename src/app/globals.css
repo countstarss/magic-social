@@ -66,6 +66,10 @@
   }
 }
 
+body {
+  background-color: rgba(255, 255, 255, 0.739)
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -77,4 +81,11 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.nextjs-toast-errors {
+  display: none!;
+}
+.nextjs-toast-errors-parent{
+  display: none!;
 }
