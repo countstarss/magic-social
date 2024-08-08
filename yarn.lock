@@ -34,7 +34,7 @@
     "@clerk/types" "4.12.1"
     tslib "2.4.1"
 
-"@clerk/nextjs@^5.2.3":
+"@clerk/nextjs@^5.2.14":
   version "5.2.14"
   resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-5.2.14.tgz#a8d5884902f7395399e131d9074b58f4ff7c09f4"
   integrity sha512-6m62iOOeSJkuyD+kw/k9zGaU+MpYTaFuFr+pX4TCQEgrvc3aOdeUXcLeeNYDIAORNtPtDx5+YS/Ld3J60/BG1Q==
@@ -2190,10 +2190,10 @@ lru-cache@^10.2.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
 
-lucide-react@^0.408.0:
-  version "0.408.0"
-  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.408.0.tgz#9a430cc956add611261093f8e5deac46e52a77d5"
-  integrity sha512-8kETAAeWmOvtGIr7HPHm51DXoxlfkNncQ5FZWXR+abX8saQwMYXANWIkUstaYtcKSo/imOe/q+tVFA8ANzdSVA==
+lucide-react@^0.424.0:
+  version "0.424.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.424.0.tgz#e9dd89a16cbb58f6731ac1cc6e1411d1f7403ca9"
+  integrity sha512-x2Nj2aytk1iOyHqt4hKenfVlySq0rYxNeEf8hE0o+Yh0iE36Rqz0rkngVdv2uQtjZ70LAE73eeplhhptYt9x4Q==
 
 map-obj@^4.1.0:
   version "4.3.0"
