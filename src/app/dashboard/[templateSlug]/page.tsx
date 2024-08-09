@@ -66,7 +66,7 @@ const TemplatePage = ({ params }: Props) => {
   return (
     <>
       <div className='mx-5 p-2 h-screen'>
-        <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded-xl  justify-between min-w-[400px] '>
+        <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded  justify-between min-w-[400px] '>
           <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
             <div className='flex gap-2 items-center p-[6px] border rounded-full bg-slate-100'>
               <h2 className='font-semibold text-lg px-4'>{selectedTemplate?.name}</h2>
@@ -78,7 +78,7 @@ const TemplatePage = ({ params }: Props) => {
           </div>
         </div>
 
-        <div className='w-full px-8 my-8 py-6 mt-8 bg-slate-200 h-fit rounded-xl'>
+        <div className='w-full px-8 my-8 py-6 mt-8 bg-slate-200 h-fit rounded'>
           <form action={onSubmit} >
             <div className='flex flex-col gap-4 p-5 px-6 m-2 bg-slate-100 rounded-lg'>
               {selectedTemplate?.form?.map((form, index) => (

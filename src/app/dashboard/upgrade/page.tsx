@@ -27,7 +27,7 @@ const Upgrade = (props: Props) => {
 
       <div className='mx-5 p-2'>
 
-        <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded-xl  justify-between min-w-[400px] '>
+        <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded  justify-between min-w-[400px] '>
           <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
             <div className='flex gap-2 items-center p-[6px] border rounded-full bg-slate-100'>
               <h2 className='font-semibold text-lg px-4'>Upgrade</h2>
@@ -38,7 +38,7 @@ const Upgrade = (props: Props) => {
             <UserButton />
           </div>
         </div>
-        <div className='w-full h-[80vh] p-2 px-6 my-6 py-6 mt-8 bg-slate-200 justify-around flex flex-col gap-8 rounded-xl overflow-scroll
+        <div className='w-full h-[80vh] p-2 px-6 my-6 py-6 mt-8 bg-slate-200 justify-around flex flex-col gap-8 rounded overflow-scroll
                       lg:grid lg:grid-cols-3
                       md:grid md:grid-cols-2 
                       '>

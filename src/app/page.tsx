@@ -2,12 +2,15 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import Logo from "@/components/Logo";
 import Auth from "@/components/Auth";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default async function Home() {
   const { userId } = auth();
 
   if (userId) {
-    redirect("/dashboard");
+    // redirect("/dashboard");
   }
 
   return (
@@ -38,9 +41,12 @@ export default async function Home() {
               </div>
             </div>
             <div className="flex flex-col mt-24 items-center justify-center text-center">
-              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-                Key Features
-              </div>
+              <Link href="/dashboard">
+                <div className="flex flex-row rounded-lg  items-center bg-black p-4">
+                  <Button className='text-xl'>Get Start</Button>
+                  <ArrowRight className='text-white font-bold' />
+                </div>
+              </Link>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">

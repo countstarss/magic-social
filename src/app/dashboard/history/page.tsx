@@ -1,3 +1,4 @@
+import { Markdown } from '@/components/Markdown'
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Textarea } from '@/components/ui/textarea'
 import { db } from '@/lib/db'
@@ -18,7 +19,7 @@ export const History = async (props: Props) => {
   return (
     
       <div className='mx-5 p-2'>
-      <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded-xl  justify-between min-w-[400px] '>
+      <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded  justify-between min-w-[400px] '>
         <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
           <div className='flex gap-2 items-center p-[6px] border rounded-full bg-slate-100'>
             <h2 className='font-semibold text-lg px-4'>History</h2>
@@ -30,8 +31,8 @@ export const History = async (props: Props) => {
         </div>
       </div>
 
-      <div className='w-full px-8 mt-8 pt-6 pb-1 mb-4 bg-slate-200 h-ull rounded-xl'>
-        <Table className='h-[77vh]'>
+      <div className='w-full px-8 mt-8 pt-6 pb-1 mb-4 bg-slate-200 h-ull rounded'>
+        <Table className='h-[77vh] overflow-hidden'>
           <TableHeader>
             <TableRow>
               <TableHead className='w-[250px]'>Template</TableHead>
@@ -40,15 +41,17 @@ export const History = async (props: Props) => {
               <TableHead className='w-[150px] text-right'>Crated At</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className='h-[67vh] overflow-scroll mb-2'>
             {
               userHistorys && userHistorys.length > 0 &&
                 userHistorys.map((history) => (
                   <TableRow key={history.createdAt.toISOString()}>
                     <TableHead className='text-lg text-nowrap overflow-clip'>{history.templateUsed}</TableHead>
                     <TableHead className='text-lg w-[250px]'>{history.title}</TableHead>
-                    <TableHead className='line-clamp-1 text-wrap overflow-scroll text-md h-[150px] p-[10px]'>
-                      <Textarea value={history.description} className='outline-none border-none h-[130px] bg-slate-100'/>
+                    <TableHead className='line-clamp-1 text-wrap text-md h-fit p-1'>
+                      <div className='border-none h-fit bg-slate-100 p-4 m-2 rounded'>
+                        <Markdown  text={history.description} />
+                      </div>
                     </TableHead>
                     <TableHead className='text-md text-right'>{history.createdAt.toISOString().slice(0,10)}</TableHead>
                   </TableRow>

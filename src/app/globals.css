@@ -11,6 +11,7 @@
 *::-webkit-scrollbar {
   display: none !important;
 }
+
 .bg-radial-gradient {
   background-image: radial-gradient(
     circle at 10% 20%,
@@ -77,15 +78,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.nextjs-toast-errors {
-  display: none!;
-}
-.nextjs-toast-errors-parent{
-  display: none!;
 }

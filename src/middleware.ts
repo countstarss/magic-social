@@ -4,9 +4,9 @@ const isPublicRoute = createRouteMatcher(
   //MARK: - 开放访问控制:
   [
     '/sign-in(.*)',
+    "/",
     '/sign-up(.*)',
-    '/dashboard',
-    '/api/webhook/',
+    '/api/webhook'
   ]
 );
 export default clerkMiddleware((auth, request) => {

@@ -49,7 +49,7 @@ const Template = ({ searchInput,selectedCategory }: Props) => {
 
   return (
     <div className={
-      cn('grid lg:grid-cols-4 md:grid-cols-3  mx-7 p-2 px-6 my-6 py-6 bg-slate-200 rounded-xl h-[80vh] gap-16 overflow-scroll shadow-inner-full',{
+      cn('grid lg:grid-cols-4 md:grid-cols-3  mx-7 p-2 px-6 my-6 py-6 bg-slate-200 rounded h-[80vh] gap-16 overflow-scroll shadow-inner-full',{
         "md:grid-rows-3" :contentTemplates.length < 9,
       })
     }>

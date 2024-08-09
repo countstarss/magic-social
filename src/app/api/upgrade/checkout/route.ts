@@ -63,8 +63,8 @@ export async function POST(req: Request) {
       customer: stripeCustomer?.stripeCustomerId,
       line_items,
       mode: "payment",
-      success_url: `http://localhost:3000/dashboard/`,
-      cancel_url: `http://localhost:3000/dashboard/upgrade`,
+      success_url: process.env.STRIPE_SUCCESS_CANCEL_URL!,
+      cancel_url: process.env.STRIPE_SUCCESS_CANCEL_URL!,
       metadata: {
         userId: userId,
       },
