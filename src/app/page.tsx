@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import Logo from "@/components/Logo";
 import Auth from "@/components/Auth";
 
-export default function Home() {
+export default async function Home() {
   const { userId } = auth();
 
   if (userId) {

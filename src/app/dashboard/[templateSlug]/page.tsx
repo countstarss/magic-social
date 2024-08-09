@@ -6,6 +6,7 @@ import { contentTemplates } from '@/lib/contentTemplate'
 import { Loader2 } from 'lucide-react'
 import React, { useState } from 'react'
 import Editor from './_components/Editor'
+import { chatSession } from '@/lib/gemini-ai'
 
 interface templateSlugProps{
   templateSlug:string
@@ -17,17 +18,44 @@ type Props = {
 
 const TemplatePage = ({ params }: Props) => {
   const [isLoading,setIsLoading] = useState(false);
+  const [aiOutput,setAiOutput] = useState<string>("");
 
   const selectedTemplate = contentTemplates.find((item) => 
     item.slug === params.templateSlug
   )  
 
+  const generateAIContent = async (formData:FormData) => {
+    setIsLoading(true)
+    try {
+      let dataSet = {
+        title: formData.get('title'),
+        description: formData.get("description"),
+      }
+  
+      const selectedPrompt = selectedTemplate?.aiPrompt;
+      const finalAIPrompt = JSON.stringify(dataSet) + ", " + selectedPrompt
+  
+      const result = await chatSession.sendMessage(finalAIPrompt);
+      const response = await result.response;
+      const text =  response.text()
+      
+      setAiOutput(text)
+      setIsLoading(false)
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+  const onSubmit= async (formData: FormData) => {
+    generateAIContent(formData)
+  }
+  
   return (
     <div className='mx-5 py-2'>
       <div className='mt-5 py-6 px-4 bg-white rounded'>
         <h2 className='font-semibold text-xl'>{selectedTemplate?.name}</h2>
       </div>
-      <form action="">
+      <form action={onSubmit}>
         <div className='flex flex-col gap-4 p-5 m-5 bg-white'>
           {selectedTemplate?.form?.map((form,index) => (
             <div key={`${selectedTemplate.slug}-${index}`}>
@@ -55,7 +83,7 @@ const TemplatePage = ({ params }: Props) => {
           </Button>
       </form>
       <div className='m-5 py-6 px-4 bg-white rounded'>
-        <Editor value='value'/>
+        <Editor value={aiOutput} />
       </div>
     </div>
   )

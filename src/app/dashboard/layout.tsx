@@ -13,7 +13,7 @@ MARK: dashboard页面布局
 
 const layout = ({ children }: Props) => {
   return (
-    <div className='bg-gray-50 h-full'>
+    <div className='bg-white h-full'>
       {/* //MARK: SideBar动画
        */}
       <div 
