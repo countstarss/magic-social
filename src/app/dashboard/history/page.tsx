@@ -7,7 +7,7 @@ import { auth } from '@clerk/nextjs/server'
 
 type Props = {}
 
-export const History = async (props: Props) => {
+export const page = async (props: Props) => {
 
   const { userId } = auth()
 
@@ -66,4 +66,4 @@ export const History = async (props: Props) => {
   )
 }
 
-export default History
+export default page
