@@ -7,8 +7,7 @@ import { auth } from '@clerk/nextjs/server'
 
 type Props = {}
 
-export const page = async (props: Props) => {
-
+const History = async (props: Props) => {
   const { userId } = auth()
 
   const userHistorys = await db.aIOutput.findMany({
@@ -66,4 +65,4 @@ export const page = async (props: Props) => {
   )
 }
 
-export default page
+export default History
