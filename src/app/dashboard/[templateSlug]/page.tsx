@@ -36,7 +36,7 @@ const TemplatePage = ({ params }: Props) => {
       const selectedPrompt = selectedTemplate?.aiPrompt;
       const finalAIPrompt = JSON.stringify(dataSet) + ", " + selectedPrompt
 
-      const result = await chatSession.sendMessage(finalAIPrompt);
+      const result = await chatSession.sendMessageStream(finalAIPrompt);
       const aiResponse = await result.response;
       const text = aiResponse.text()
 
