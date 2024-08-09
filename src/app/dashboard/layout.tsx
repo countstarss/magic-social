@@ -13,7 +13,9 @@ MARK: dashboard页面布局
 
 const layout = ({ children }: Props) => {
   return (
-    <div className='bg-white h-full'>
+    // MARK: BG LEFT
+    //TODO: `h-fit`的作用是当高度产生变化，也能及时适应，填充背景颜色
+    <div className='bg-slate-700 h-fit'>
       {/* //MARK: SideBar动画
        */}
       <div 
@@ -25,7 +27,9 @@ const layout = ({ children }: Props) => {
         <SideBar />
 
       </div>
-      <div className='lg:ml-56 bg-white h-full'>
+      {/* //TODO: 控制整个右半部分背景
+       */}
+      <div className='lg:ml-56 bg-slate-700 h-fit'>
         {children}
       </div>
     </div>

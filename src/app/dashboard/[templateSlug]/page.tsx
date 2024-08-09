@@ -36,7 +36,7 @@ const TemplatePage = ({ params }: Props) => {
       const selectedPrompt = selectedTemplate?.aiPrompt;
       const finalAIPrompt = JSON.stringify(dataSet) + ", " + selectedPrompt
 
-      const result = await chatSession.sendMessageStream(finalAIPrompt);
+      const result = await chatSession.sendMessage(finalAIPrompt);
       const aiResponse = await result.response;
       const text = aiResponse.text()
 
@@ -63,11 +63,11 @@ const TemplatePage = ({ params }: Props) => {
 
   return (
     <div className='mx-5 py-2'>
-      <div className='mt-5 py-6 px-4 bg-white rounded'>
+      <div className='mt-5 py-6 px-4 bg-slate-100 rounded'>
         <h2 className='font-semibold text-xl'>{selectedTemplate?.name}</h2>
       </div>
       <form action={onSubmit}>
-        <div className='flex flex-col gap-4 p-5 m-5 bg-white'>
+        <div className='flex flex-col gap-4 p-5 m-5 bg-slate-100'>
           {selectedTemplate?.form?.map((form, index) => (
             <div key={`${selectedTemplate.slug}-${index}`}>
               <label>{form.label}</label>
@@ -93,7 +93,7 @@ const TemplatePage = ({ params }: Props) => {
           }
         </Button>
       </form>
-      <div className='m-5 py-6 px-4 bg-white rounded'>
+      <div className='m-5 py-6 px-4 bg-slate-100 rounded'>
         <Editor value={aiOutput} />
       </div>
     </div>

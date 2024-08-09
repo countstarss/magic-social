@@ -13,7 +13,7 @@ const Editor = ({ value }: Props) => {
   ,[]);
 
   return (
-    <ReactQuill className='h-[300px] pb-10 bg-white whitespace-pre-wrap' value={value}></ReactQuill>
+    <ReactQuill className='h-[300px] pb-10 bg-slate-100 whitespace-pre-wrap' value={value}></ReactQuill>
   )
 }
 

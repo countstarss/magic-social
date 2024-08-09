@@ -9,11 +9,11 @@ import {
 export const contentTemplates = [
   {
     name: "Youtube Video Description",
-    desc: "An AI tool that generate youtube video description from your information",
+    desc: "An AI tool that generate youtube video description from your information,Generates human-friendly text, output in Chinese",
     category: "All,Media",
     icon: FaYoutube,
     aiPrompt:
-      "Give me youtube video description Ideas based on given video description outline and title and give me result in Rich Text Editor format",
+      "Give me youtube video description Ideas based on given video description outline and title",
     slug: "youtube-description",
     form: [
       {
@@ -31,11 +31,11 @@ export const contentTemplates = [
   },
   {
     name: "Youtube Video Idea",
-    desc: "An AI tool that generate Youtube Video Idea based on given information",
+    desc: "An AI tool that generate Youtube Video Idea based on given information,Generates human-friendly text, output in Chinese",
     category: "All,Meida",
     icon: FaYoutube,
     aiPrompt:
-      "Give me youtube video idea on given video niche & outline topic and give me result in Rich Text Editor format",
+      "Give me youtube video idea on given video niche & outline topic",
     slug: "generate-youtube-video-idea",
     form: [
       {
@@ -53,11 +53,11 @@ export const contentTemplates = [
   },
   {
     name: "Instagram Hashtags",
-    desc: "An AI tool that generate Instagram hashtags based on your post niche and outline information",
+    desc: "An AI tool that generate Instagram hashtags based on your post niche and outline information,Generates human-friendly text, output in Chinese",
     category: "All,Media",
     icon: FaInstagram,
     aiPrompt:
-      "Give me some good examples of instagram hashtags on given niche & outline topic and give me result in Rich Text Editor format",
+      "Give me some good examples of instagram hashtags on given niche & outline topic",
     slug: "generate-instagram-hashtags",
     form: [
       {
@@ -75,11 +75,11 @@ export const contentTemplates = [
   },
   {
     name: "Tiktok Hashtags",
-    desc: "An AI tool that generate Tiktok topic idea based on your post niche and outline information",
+    desc: "An AI tool that generate Tiktok topic idea based on your post niche and outline information,Generates human-friendly text, output in Chinese",
     category: "All,Meida",
     icon: FaTiktok,
     aiPrompt:
-      "Give me some good examples of instagram hashtags on given niche & outline topic and give me result in Rich Text Editor format",
+      "Give me some good examples of instagram hashtags on given niche & outline topic",
     slug: "generate-tiktok-hashtags",
     form: [
       {
@@ -97,11 +97,11 @@ export const contentTemplates = [
   },
   {
     name: "Linkedin Post",
-    desc: "An AI tool that generate Linkedin Post idea based on your post niche and outline information",
+    desc: "An AI tool that generate Linkedin Post idea based on your post niche and outline information,Generates human-friendly text, output in Chinese",
     category: "All,Work",
     icon: FaLinkedin,
     aiPrompt:
-      "Give me some good examples of Linkedin Post idea on given niche & outline topic and give me result in Rich Text Editor format",
+      "Give me some good examples of Linkedin Post idea on given niche & outline topic",
     slug: "generate-likedin-post",
     form: [
       {
@@ -119,7 +119,7 @@ export const contentTemplates = [
   },
   {
     name: "Tweet",
-    desc: "An AI tool that generate Linkedin Post idea based on your post niche and outline information",
+    desc: "An AI tool that generate Tweet Post idea based on your post niche and outline information,Generates human-friendly text, output in Chinese",
     category: "All,Work,Media",
     icon: FaTwitter,
     aiPrompt:
@@ -139,6 +139,28 @@ export const contentTemplates = [
       },
     ],
   },
-  
-  
 ];
+
+export const upgradePlans = [
+  {
+    name:"$10",
+    description:"Purchaes 10000 words in one-click.",
+    func1:"10,000 words/purchaes",
+    func2:"3 Template Access",
+    func3:"Retain 7 days History"
+  },
+  {
+    name:"$25",
+    description:"Purchaes 10000 words in one-click.",
+    func1:"100,000 words/purchaes",
+    func2:"10 Template Access",
+    func3:"Retain 30 days History"
+  },
+  {
+    name:"$49",
+    description:"No Limited words to use",
+    func1:"No Limited",
+    func2:"Support custom Template",
+    func3:"Retain All History"
+  },
+]

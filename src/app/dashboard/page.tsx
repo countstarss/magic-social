@@ -12,7 +12,8 @@ const Dashboard = (props: Props) => {
   const [selectedCategory,setSelectedCategory] = useState("All");
 
   return (
-    <div>
+    // MARK: BG RIGHT
+    <div className='bg-slate-700 h-screen'>
       <Search onSearchInput={setSearchInput} onSelecteCategory={setSelectedCategory}/>
       <Template searchInput={searchInput as string} selectedCategory={selectedCategory as string}/>
     </div>

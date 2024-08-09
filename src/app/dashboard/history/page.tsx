@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Textarea } from '@/components/ui/textarea'
 import { db } from '@/lib/db'
+import { UserButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 
 type Props = {}
@@ -23,12 +24,20 @@ export const History = async (props: Props) => {
     }
   })
   return (
-    <div className='mx-5 py-2'>
-      <div className='mt-5 py-6 px-4 bg-slate-200 rounded-xl'>
-        <h2 className='font-semibold text-xl'>Output History</h2>
+    <div className='mx-5 p-2'>
+      <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded-xl  justify-between min-w-[400px] '>
+        <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
+          <div className='flex gap-2 items-center p-[6px] border rounded-full bg-slate-100'>
+            <h2 className='font-semibold text-lg px-4'>History</h2>
+          </div>
+        </div>
+
+        <div className='flex gap-2 items-center p-2 scale-150'>
+          <UserButton />
+        </div>
       </div>
 
-      <div className='mt-5 py-6 px-4 bg-white rounded'>
+      <div className='w-full px-8 my-8 py-6 mt-8 bg-slate-200 h-ull rounded-xl'>
         <Table>
           <TableHeader>
             <TableRow>
@@ -45,15 +54,15 @@ export const History = async (props: Props) => {
                   <TableRow key={history.createdAt.toISOString()}>
                     <TableHead className='text-lg text-nowrap overflow-clip'>{history.templateUsed}</TableHead>
                     <TableHead className='text-lg w-[250px]'>{history.title}</TableHead>
-                    <TableHead className='line-clamp-1 text-wrap overflow-scroll text-md h-[150px] p-[5px]'>
-                      <Textarea value={history.description} className='outline-none border-none h-[140px]'/>
+                    <TableHead className='line-clamp-1 text-wrap overflow-scroll text-md h-[150px] p-[10px]'>
+                      <Textarea value={history.description} className='outline-none border-none h-[130px] bg-slate-100'/>
                     </TableHead>
                     <TableHead className='text-md text-right'>{history.createdAt.toISOString().slice(0,10)}</TableHead>
                   </TableRow>
                 ))
             }
           </TableBody>
-        <TableCaption className='fixed bottom-10 left-1/2'>A list of your ai output history</TableCaption>
+          <TableCaption className='fixed bottom-2 left-1/2 bg-slate-200 rounded-full px-3 py-1'>A list of your ai output history</TableCaption>
         </Table>
       </div>
 
