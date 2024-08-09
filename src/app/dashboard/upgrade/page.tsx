@@ -1,13 +1,11 @@
 'use client'
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import axios from 'axios';
-import { Check, SearchIcon } from 'lucide-react';
+import axios, { Axios } from 'axios';
+import { Check } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import { upgradePlans } from '@/lib/contentTemplate';
-import Search from '../_components/Search';
-import Category from '../_components/Category';
 import { UserButton } from '@clerk/nextjs';
 
 type Props = {}
@@ -15,9 +13,10 @@ type Props = {}
 const Upgrade = (props: Props) => {
   const router = useRouter();
 
-  const handleOnClick = async () => {
-    const response = await axios.post('/api/upgrade/checkout')
-    
+  const handleOnClick = async () => {    
+    const response = await axios.post("/api/upgrade/checkout")
+    console.log('response',response);
+    router.push(response.data.url);
   }
 
   return (
@@ -39,13 +38,13 @@ const Upgrade = (props: Props) => {
             <UserButton />
           </div>
         </div>
-        <div className='w-full h-[80vh] p-2 px-6 my-6 py-6 mt-8 bg-slate-200 justify-around flex flex-col gap-10 rounded-xl
+        <div className='w-full h-[80vh] p-2 px-6 my-6 py-6 mt-8 bg-slate-200 justify-around flex flex-col gap-8 rounded-xl overflow-scroll
                       lg:grid lg:grid-cols-3
                       md:grid md:grid-cols-2 
                       '>
           {
             upgradePlans.map((plan) => (
-              <Card className="h-[300px]" key={`${plan.name}-${Date().toString()}`}>
+              <Card className="h-[320px]" key={`${plan.name}-${Date().toString()}`}>
                 <CardHeader>
                   <CardTitle className='w-[300px] ml-2'>{plan.name}</CardTitle>
                   <CardDescription className='ml-2'>{plan.description}</CardDescription>
@@ -80,5 +79,5 @@ const Upgrade = (props: Props) => {
     </>
   )
 }
-
+// FIXME: HERE
 export default Upgrade;

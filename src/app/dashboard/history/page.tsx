@@ -5,17 +5,9 @@ import { UserButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 
 type Props = {}
-// MARK:History
-
 
 export const History = async (props: Props) => {
 
-  // const [content,setContent] = useState('')
-  // const onChangeHandler = (content:string) => {
-  //   useEffect(() => {
-  //     setContent(content)
-  //   },[content])
-  // }
   const { userId } = auth()
 
   const userHistorys = await db.aIOutput.findMany({
@@ -24,7 +16,8 @@ export const History = async (props: Props) => {
     }
   })
   return (
-    <div className='mx-5 p-2'>
+    
+      <div className='mx-5 p-2'>
       <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded-xl  justify-between min-w-[400px] '>
         <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
           <div className='flex gap-2 items-center p-[6px] border rounded-full bg-slate-100'>
@@ -37,8 +30,8 @@ export const History = async (props: Props) => {
         </div>
       </div>
 
-      <div className='w-full px-8 my-8 py-6 mt-8 bg-slate-200 h-ull rounded-xl'>
-        <Table>
+      <div className='w-full px-8 mt-8 pt-6 pb-1 mb-4 bg-slate-200 h-ull rounded-xl'>
+        <Table className='h-[77vh]'>
           <TableHeader>
             <TableRow>
               <TableHead className='w-[250px]'>Template</TableHead>
@@ -62,7 +55,7 @@ export const History = async (props: Props) => {
                 ))
             }
           </TableBody>
-          <TableCaption className='fixed bottom-2 left-1/2 bg-slate-200 rounded-full px-3 py-1'>A list of your ai output history</TableCaption>
+          <TableCaption className='fixed bottom-8 left-1/2 bg-slate-300 rounded-full px-3 py-1 text-white'>A list of your ai output history</TableCaption>
         </Table>
       </div>
 
