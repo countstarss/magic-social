@@ -15,7 +15,7 @@ const layout = ({ children }: Props) => {
   return (
     <>
       {/* //TODO: `h-fit`的作用是当高度产生变化，也能及时适应，填充背景颜色 */}
-      <div className='bg-slate-700 h-fit'>
+      <div className='bg-slate-100 h-fit'>
         {/* //MARK: SideBar动画
         */}
         <div 
@@ -31,7 +31,7 @@ const layout = ({ children }: Props) => {
         </div>
         {/* //TODO: 控制整个右半部分背景
         */}
-        <div className='lg:ml-56 bg-slate-700 h-fit'>
+        <div className='lg:ml-56 bg-slate-100 h-fit'>
           {children}
         </div>
       </div>

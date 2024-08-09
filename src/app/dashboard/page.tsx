@@ -13,7 +13,7 @@ const Dashboard = (props: Props) => {
 
   return (
     // MARK: BG RIGHT
-    <div className='bg-slate-700 h-screen'>
+    <div className='bg-slate-100 h-screen'>
       <Search onSearchInput={setSearchInput} onSelecteCategory={setSelectedCategory}/>
       <Template searchInput={searchInput as string} selectedCategory={selectedCategory as string}/>
     </div>
