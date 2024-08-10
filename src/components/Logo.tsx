@@ -17,7 +17,7 @@ const Logo = (props: Props) => {
           <circle cx="36" cy="14" r="1" fill="#ffffff"></circle> 
         </svg>
         </div>
-        <h1 className="text-xl font-bold">Insight Lab</h1>
+        <h1 className="text-xl font-bold text-black">Insight Lab</h1>
       </div>
     </>
   )

@@ -59,8 +59,8 @@ const Template = ({ searchInput,selectedCategory }: Props) => {
             href={`/dashboard/${template.slug}`}
             className="bg-slate-100 w-full rounded-lg h-[200px] py-6 px-4 text-center flex flex-col justify-center"
           >
-            <template.icon className="h-12 w-12 mx-auto"></template.icon>
-            <h2 className="font-semibold mt-5">{template.name}</h2>
+            <template.icon className="h-12 w-12 mx-auto text-slate-950"></template.icon>
+            <h2 className="font-semibold mt-5 text-slate-950">{template.name}</h2>
           </Link>
         </div>
       ))}

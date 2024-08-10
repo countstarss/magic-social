@@ -32,7 +32,7 @@ const Search = ({ onSearchInput, onSelecteCategory } : Props) => {
       <div className='flex flex-row md:flex-row gap-2 mt-5 py-6 px-4 bg-slate-200 rounded  justify-between min-w-[400px] '>
         <div className='flex gap-2 items-center  w-4/5 lg:w-2/3 '>
           <div className='flex gap-2 items-center p-2 border rounded-full bg-slate-100'>
-            <SearchIcon />
+            <SearchIcon className='text-black'/>
             <input
               type="text"
               placeholder='search...'
