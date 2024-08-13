@@ -19,6 +19,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="93209542-dc49-420b-aadc-690c7c2d38ba"></script>
+        </head>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
