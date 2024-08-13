@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { contentTemplates } from '@/lib/contentTemplate'
+import { contentTemplates } from '../../../lib/contentTemplate'
 import { Loader2 } from 'lucide-react'
 import React, { useState } from 'react'
 import Editor from './_components/Editor'
